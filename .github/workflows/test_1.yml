@@ -29,6 +29,7 @@ env:
     ) || 'main' }}
   CONTRIB_REPO_SHA: main
   PIP_EXISTS_ACTION: w
+  UV_VERSION: "0.10.9"
 
 jobs:
 
@@ -45,8 +46,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-fastapi -- -ra
@@ -64,8 +70,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-flask-0 -- -ra
@@ -83,8 +94,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-flask-1 -- -ra
@@ -102,8 +118,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-flask-2 -- -ra
@@ -121,8 +142,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-flask-3 -- -ra
@@ -140,8 +166,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-flask-0 -- -ra
@@ -159,8 +190,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-flask-1 -- -ra
@@ -178,8 +214,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-flask-2 -- -ra
@@ -197,8 +238,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-flask-3 -- -ra
@@ -216,8 +262,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-flask-0 -- -ra
@@ -235,8 +286,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-flask-1 -- -ra
@@ -254,8 +310,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-flask-2 -- -ra
@@ -273,8 +334,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-flask-3 -- -ra
@@ -292,8 +358,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-flask-0 -- -ra
@@ -311,8 +382,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-flask-1 -- -ra
@@ -330,8 +406,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-flask-2 -- -ra
@@ -349,8 +430,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-flask-3 -- -ra
@@ -368,8 +454,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-flask-0 -- -ra
@@ -387,8 +478,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-flask-1 -- -ra
@@ -406,8 +502,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-flask-2 -- -ra
@@ -425,8 +526,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-flask-3 -- -ra
@@ -444,8 +550,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-flask-0 -- -ra
@@ -463,8 +574,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-flask-1 -- -ra
@@ -482,8 +598,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-flask-2 -- -ra
@@ -501,8 +622,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-flask-3 -- -ra
@@ -520,8 +646,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-flask-0 -- -ra
@@ -539,8 +670,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-flask-1 -- -ra
@@ -558,8 +694,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-urllib -- -ra
@@ -577,8 +718,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-urllib -- -ra
@@ -596,8 +742,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-urllib -- -ra
@@ -615,8 +766,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-urllib -- -ra
@@ -634,8 +790,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-urllib -- -ra
@@ -653,8 +814,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-urllib -- -ra
@@ -672,8 +838,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-urllib -- -ra
@@ -691,8 +862,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-urllib3-0 -- -ra
@@ -710,8 +886,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-urllib3-1 -- -ra
@@ -729,8 +910,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-urllib3-0 -- -ra
@@ -748,8 +934,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-urllib3-1 -- -ra
@@ -767,8 +958,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-urllib3-0 -- -ra
@@ -786,8 +982,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-urllib3-1 -- -ra
@@ -805,8 +1006,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-urllib3-0 -- -ra
@@ -824,8 +1030,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-urllib3-1 -- -ra
@@ -843,8 +1054,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-urllib3-0 -- -ra
@@ -862,8 +1078,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-urllib3-1 -- -ra
@@ -881,8 +1102,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-urllib3-0 -- -ra
@@ -900,8 +1126,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-urllib3-1 -- -ra
@@ -919,8 +1150,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-requests -- -ra
@@ -938,8 +1174,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-requests -- -ra
@@ -957,8 +1198,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-requests -- -ra
@@ -976,8 +1222,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-requests -- -ra
@@ -995,8 +1246,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-requests -- -ra
@@ -1014,8 +1270,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-requests -- -ra
@@ -1033,8 +1294,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-starlette-oldest -- -ra
@@ -1052,8 +1318,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-starlette-latest -- -ra
@@ -1071,8 +1342,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-starlette-oldest -- -ra
@@ -1090,8 +1366,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-starlette-latest -- -ra
@@ -1109,8 +1390,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-starlette-oldest -- -ra
@@ -1128,8 +1414,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-starlette-latest -- -ra
@@ -1147,8 +1438,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-starlette-oldest -- -ra
@@ -1166,8 +1462,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-starlette-latest -- -ra
@@ -1185,8 +1486,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-starlette-oldest -- -ra
@@ -1204,8 +1510,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-starlette-latest -- -ra
@@ -1223,8 +1534,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-starlette-oldest -- -ra
@@ -1242,8 +1558,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-starlette-latest -- -ra
@@ -1261,8 +1582,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-starlette-oldest -- -ra
@@ -1280,8 +1606,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-starlette-latest -- -ra
@@ -1299,8 +1630,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-jinja2 -- -ra
@@ -1318,8 +1654,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-jinja2 -- -ra
@@ -1337,8 +1678,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-jinja2 -- -ra
@@ -1356,8 +1702,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-jinja2 -- -ra
@@ -1375,8 +1726,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-jinja2 -- -ra
@@ -1394,8 +1750,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-jinja2 -- -ra
@@ -1413,8 +1774,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-jinja2 -- -ra
@@ -1432,8 +1798,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-logging -- -ra
@@ -1451,8 +1822,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-logging -- -ra
@@ -1470,8 +1846,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-logging -- -ra
@@ -1489,8 +1870,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-logging -- -ra
@@ -1508,8 +1894,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-logging -- -ra
@@ -1527,8 +1918,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-logging -- -ra
@@ -1546,8 +1942,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-logging -- -ra
@@ -1565,8 +1966,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-exporter-richconsole -- -ra
@@ -1584,8 +1990,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-exporter-richconsole -- -ra
@@ -1603,8 +2014,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-exporter-richconsole -- -ra
@@ -1622,8 +2038,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-exporter-richconsole -- -ra
@@ -1641,8 +2062,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-exporter-richconsole -- -ra
@@ -1660,8 +2086,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-exporter-richconsole -- -ra
@@ -1679,8 +2110,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-exporter-richconsole -- -ra
@@ -1698,8 +2134,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-exporter-prometheus-remote-write -- -ra
@@ -1717,8 +2158,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-exporter-prometheus-remote-write -- -ra
@@ -1736,8 +2182,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-exporter-prometheus-remote-write -- -ra
@@ -1755,8 +2206,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-exporter-prometheus-remote-write -- -ra
@@ -1774,8 +2230,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-exporter-prometheus-remote-write -- -ra
@@ -1793,8 +2254,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-exporter-prometheus-remote-write -- -ra
@@ -1812,8 +2278,13 @@ jobs:
         with:
           python-version: "pypy-3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy310-test-exporter-prometheus-remote-write -- -ra
@@ -1831,8 +2302,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-mysql-0 -- -ra
@@ -1850,8 +2326,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-mysql-1 -- -ra
@@ -1869,8 +2350,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-mysql-0 -- -ra
@@ -1888,8 +2374,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-mysql-1 -- -ra
@@ -1907,8 +2398,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-mysql-0 -- -ra
@@ -1926,8 +2422,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-mysql-1 -- -ra
@@ -1945,8 +2446,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-mysql-0 -- -ra
@@ -1964,8 +2470,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-mysql-1 -- -ra
@@ -1983,8 +2494,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-mysql-0 -- -ra
@@ -2002,8 +2518,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-mysql-1 -- -ra
@@ -2021,8 +2542,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-mysql-0 -- -ra
@@ -2040,8 +2566,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-mysql-1 -- -ra
@@ -2059,8 +2590,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-mysql-0 -- -ra
@@ -2078,8 +2614,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-mysql-1 -- -ra
@@ -2097,8 +2638,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-mysqlclient -- -ra
@@ -2116,8 +2662,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-mysqlclient -- -ra
@@ -2135,8 +2686,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-mysqlclient -- -ra
@@ -2154,8 +2710,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-mysqlclient -- -ra
@@ -2173,8 +2734,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-mysqlclient -- -ra
@@ -2192,8 +2758,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-mysqlclient -- -ra
@@ -2211,8 +2782,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-mysqlclient -- -ra
@@ -2230,8 +2806,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-psycopg2 -- -ra
@@ -2249,8 +2830,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-psycopg2 -- -ra
@@ -2268,8 +2854,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-psycopg2 -- -ra
@@ -2287,8 +2878,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-psycopg2 -- -ra
@@ -2306,8 +2902,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-psycopg2 -- -ra
@@ -2325,8 +2926,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-psycopg2 -- -ra
@@ -2344,8 +2950,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-psycopg2-binary -- -ra
@@ -2363,8 +2974,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-psycopg2-binary -- -ra
@@ -2382,8 +2998,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-psycopg2-binary -- -ra
@@ -2401,8 +3022,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-psycopg2-binary -- -ra
@@ -2420,8 +3046,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-psycopg2-binary -- -ra
@@ -2439,8 +3070,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-psycopg2-binary -- -ra
@@ -2458,8 +3094,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-psycopg -- -ra
@@ -2477,8 +3118,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-psycopg -- -ra
@@ -2496,8 +3142,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-psycopg -- -ra
@@ -2515,8 +3166,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-psycopg -- -ra
@@ -2534,8 +3190,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-psycopg -- -ra
@@ -2553,8 +3214,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-psycopg -- -ra
@@ -2572,8 +3238,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-psycopg -- -ra
@@ -2591,8 +3262,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymemcache-0 -- -ra
@@ -2610,8 +3286,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymemcache-1 -- -ra
@@ -2629,8 +3310,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymemcache-2 -- -ra
@@ -2648,8 +3334,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymemcache-3 -- -ra
@@ -2667,8 +3358,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymemcache-4 -- -ra
@@ -2686,8 +3382,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymemcache-0 -- -ra
@@ -2705,8 +3406,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymemcache-1 -- -ra
@@ -2724,8 +3430,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymemcache-2 -- -ra
@@ -2743,8 +3454,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymemcache-3 -- -ra
@@ -2762,8 +3478,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymemcache-4 -- -ra
@@ -2781,8 +3502,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymemcache-0 -- -ra
@@ -2800,8 +3526,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymemcache-1 -- -ra
@@ -2819,8 +3550,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymemcache-2 -- -ra
@@ -2838,8 +3574,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymemcache-3 -- -ra
@@ -2857,8 +3598,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymemcache-4 -- -ra
@@ -2876,8 +3622,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymemcache-0 -- -ra
@@ -2895,8 +3646,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymemcache-1 -- -ra
@@ -2914,8 +3670,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymemcache-2 -- -ra
@@ -2933,8 +3694,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymemcache-3 -- -ra
@@ -2952,8 +3718,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymemcache-4 -- -ra
@@ -2971,8 +3742,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymemcache-0 -- -ra
@@ -2990,8 +3766,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymemcache-1 -- -ra
@@ -3009,8 +3790,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymemcache-2 -- -ra
@@ -3028,8 +3814,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymemcache-3 -- -ra
@@ -3047,8 +3838,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymemcache-4 -- -ra
@@ -3066,8 +3862,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymemcache-0 -- -ra
@@ -3085,8 +3886,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymemcache-1 -- -ra
@@ -3104,8 +3910,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymemcache-2 -- -ra
@@ -3123,8 +3934,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymemcache-3 -- -ra
@@ -3142,8 +3958,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymemcache-4 -- -ra
@@ -3161,8 +3982,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymemcache-0 -- -ra
@@ -3180,8 +4006,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymemcache-1 -- -ra
@@ -3199,8 +4030,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymemcache-2 -- -ra
@@ -3218,8 +4054,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymemcache-3 -- -ra
@@ -3237,8 +4078,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymemcache-4 -- -ra
@@ -3256,8 +4102,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymongo -- -ra
@@ -3275,8 +4126,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymongo -- -ra
@@ -3294,8 +4150,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymongo -- -ra
@@ -3313,8 +4174,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymongo -- -ra
@@ -3332,8 +4198,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymongo -- -ra
@@ -3351,8 +4222,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymongo -- -ra
@@ -3370,8 +4246,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymongo -- -ra
@@ -3389,8 +4270,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymysql -- -ra
@@ -3408,8 +4294,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymysql -- -ra
@@ -3427,8 +4318,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymysql -- -ra
@@ -3446,8 +4342,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymysql -- -ra
@@ -3465,8 +4366,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymysql -- -ra
@@ -3484,8 +4390,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymysql -- -ra
@@ -3503,8 +4414,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pymysql -- -ra
@@ -3522,8 +4438,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pymssql -- -ra
@@ -3541,8 +4462,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pymssql -- -ra
@@ -3560,8 +4486,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pymssql -- -ra
@@ -3579,8 +4510,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pymssql -- -ra
@@ -3598,8 +4534,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pymssql -- -ra
@@ -3617,8 +4558,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pymssql -- -ra
@@ -3636,8 +4582,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-pyramid -- -ra
@@ -3655,8 +4606,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-pyramid -- -ra
@@ -3674,8 +4630,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-pyramid -- -ra
@@ -3693,8 +4654,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-pyramid -- -ra
@@ -3712,8 +4678,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-pyramid -- -ra
@@ -3731,8 +4702,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-pyramid -- -ra
@@ -3750,8 +4726,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-pyramid -- -ra
@@ -3769,8 +4750,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-asgi -- -ra
@@ -3788,8 +4774,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-asgi -- -ra
@@ -3807,8 +4798,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-asgi -- -ra
@@ -3826,8 +4822,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-asgi -- -ra
@@ -3845,8 +4846,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-asgi -- -ra
@@ -3864,8 +4870,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-asgi -- -ra
@@ -3883,8 +4894,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-asgi -- -ra
@@ -3902,8 +4918,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-asyncpg -- -ra
@@ -3921,8 +4942,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-asyncpg -- -ra
@@ -3940,8 +4966,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-asyncpg -- -ra
@@ -3959,8 +4990,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-asyncpg -- -ra
@@ -3978,8 +5014,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-asyncpg -- -ra
@@ -3997,8 +5038,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-asyncpg -- -ra
@@ -4016,8 +5062,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-sqlite3 -- -ra
@@ -4035,8 +5086,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-sqlite3 -- -ra
@@ -4054,8 +5110,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-sqlite3 -- -ra
@@ -4073,8 +5134,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-sqlite3 -- -ra
@@ -4092,8 +5158,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-sqlite3 -- -ra
@@ -4111,8 +5182,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-sqlite3 -- -ra
@@ -4130,8 +5206,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-sqlite3 -- -ra
@@ -4149,8 +5230,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-wsgi -- -ra
@@ -4168,8 +5254,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-wsgi -- -ra
@@ -4187,8 +5278,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-wsgi -- -ra
@@ -4206,8 +5302,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-wsgi -- -ra
@@ -4225,8 +5326,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-wsgi -- -ra
@@ -4244,8 +5350,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-wsgi -- -ra
@@ -4263,8 +5374,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-wsgi -- -ra
@@ -4282,8 +5398,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-grpc-0 -- -ra
@@ -4301,8 +5422,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-grpc-1 -- -ra
@@ -4320,8 +5446,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-grpc-0 -- -ra
@@ -4339,8 +5470,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-grpc-1 -- -ra
@@ -4358,8 +5494,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-grpc-0 -- -ra
@@ -4377,8 +5518,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-grpc-1 -- -ra
@@ -4396,8 +5542,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-grpc-0 -- -ra
@@ -4415,8 +5566,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-grpc-1 -- -ra
@@ -4434,8 +5590,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-grpc-1 -- -ra
@@ -4453,8 +5614,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-grpc-1 -- -ra
@@ -4472,8 +5638,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4491,8 +5662,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4510,8 +5686,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4529,8 +5710,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4548,8 +5734,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4567,8 +5758,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4586,8 +5782,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4605,8 +5806,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py312-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4624,8 +5830,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4643,8 +5854,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py313-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4662,8 +5878,13 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py314-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4681,8 +5902,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-sqlalchemy-0 -- -ra
@@ -4700,8 +5926,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-sqlalchemy-1 -- -ra
@@ -4719,8 +5950,13 @@ jobs:
         with:
           python-version: "pypy-3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e pypy3-test-instrumentation-sqlalchemy-2 -- -ra
@@ -4738,8 +5974,13 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py39-test-instrumentation-redis -- -ra
@@ -4757,8 +5998,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py310-test-instrumentation-redis -- -ra
@@ -4776,8 +6022,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "${{ env.UV_VERSION }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
 
       - name: Run tests
         run: tox -e py311-test-instrumentation-redis -- -ra

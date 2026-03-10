@@ -29,6 +29,7 @@ env:
     ) || 'main' }}{% endraw %}
   CONTRIB_REPO_SHA: main
   PIP_EXISTS_ACTION: w
+  UV_VERSION: "0.10.9"
 
 jobs:
   {%- for job_data in job_datas %}
@@ -46,8 +47,13 @@ jobs:
         with:
           python-version: "{{ job_data.python_version }}"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "{{ '${{ env.UV_VERSION }}' }}"
+
       - name: Install tox
-        run: pip install tox-uv
+        run: uv pip install --system tox-uv
       {%- if job_data.os == "windows-latest" %}
 
       - name: Configure git to support long filenames
